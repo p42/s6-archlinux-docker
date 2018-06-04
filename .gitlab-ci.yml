@@ -8,14 +8,12 @@ variables:
   IMAGE_TAG: "latest"
   GITHUB_PROJECT: "p42/s6-archlinux-docker.git"
 
-job:
-  tags:
-    - docker
-
 before_script:
   - docker info
 
 build-master:
+  tags:
+    - docker
   stage: build
   script:
     - docker build --pull -t "${IMAGE_NAME}:${IMAGE_TAG}" .
@@ -23,6 +21,8 @@ build-master:
     - master
 
 test-master:
+  tags:
+    - docker
   stage: test
   script:
     - docker run --rm "${IMAGE_NAME}:${IMAGE_TAG}" /ci_tests/run_tests system
@@ -30,6 +30,8 @@ test-master:
     - master
 
 test:
+  tags:
+    - docker
   stage: test
   script:
     - docker run --rm "${IMAGE_NAME}:${IMAGE_TAG}" /ci_tests/run_tests system
@@ -37,6 +39,8 @@ test:
     - master
 
 build:
+  tags:
+    - docker
   stage: build
   script:
     - docker build --pull -t "${IMAGE_NAME}:${IMAGE_TAG}" .
@@ -44,6 +48,8 @@ build:
     - master
 
 deploy_to_github:
+  tags:
+    - docker
   stage: deploy
   script:
     - git push git@github.com:${GITHUB_PROJECT} master
@@ -51,6 +57,8 @@ deploy_to_github:
     - master
 
 deploy_tags_to_github:
+  tags:
+    - docker
   stage: deploy
   script:
     - git push git@github.com:${GITHUB_PROJECT} master --tags
