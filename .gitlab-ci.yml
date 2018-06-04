@@ -50,6 +50,7 @@ build:
 deploy_to_github:
   tags:
     - docker
+    - github-key
   stage: deploy
   script:
     - git push git@github.com:${GITHUB_PROJECT} master
@@ -59,6 +60,7 @@ deploy_to_github:
 deploy_tags_to_github:
   tags:
     - docker
+    - github-key
   stage: deploy
   script:
     - git push git@github.com:${GITHUB_PROJECT} master --tags
