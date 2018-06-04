@@ -8,6 +8,10 @@ variables:
   IMAGE_TAG: "latest"
   GITHUB_PROJECT: "p42/s6-archlinux-docker.git"
 
+job:
+  tags:
+    - docker
+
 before_script:
   - docker info
 
