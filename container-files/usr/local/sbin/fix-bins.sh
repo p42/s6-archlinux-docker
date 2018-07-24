@@ -4,7 +4,7 @@
 if [ ! -L "/bin" ]; then
   cd / || exit 1
   tar cf - bin | ( cd /usr || exit 1; tar xfp - )
-  rm -f -- bin/*
+  rm -rf -- bin/*
   rmdir bin
   ln -s /usr/bin bin
 fi
