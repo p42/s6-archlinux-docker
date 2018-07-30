@@ -45,11 +45,13 @@ This will present you with a shell on fresh container that will stop and remove 
 
 ~~~
 FROM project42/s6-archlinux:latest
-MAINTAINER Jordan Clark mail@jordanclark.us
 
 RUN pacman --noconfirm -Syu && \
 pacman --noconfirm -S cowsay && \
-rm -rf /usr/share/man/* /var/cache/pacman/pkg/* /var/lib/pacman/sync/* /etc/pacman.d/mirrorlist.pacnew
+rm -rf /usr/share/man/* \
+/var/cache/pacman/pkg/* \
+/var/lib/pacman/sync/* \
+/etc/pacman.d/mirrorlist.pacnew
 
 ENTRYPOINT ["/init"]
 ~~~
