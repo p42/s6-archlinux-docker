@@ -37,7 +37,7 @@ This image is meant to be used as a base to build custom docker images from.  It
 
 ~~~
 docker run --rm -ti project42/s6-archlinux:latest bash
-~~~ 
+~~~
 
 This will present you with a shell on fresh container that will stop and remove itself when you exit the container.
 
@@ -64,8 +64,6 @@ ENTRYPOINT ["/init"]
 | TZ | Sets the container Timezone; example: CST6CDT default: UTC |  
 
 ## Maintenance
-
-### Upgrading
 
 ### Shell Access
 
