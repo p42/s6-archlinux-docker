@@ -3,16 +3,16 @@
 set -e
 
 #User params
-TZ=${TZ:="UTC"}
+TIMEZONE=${TZ:="UTC"}
 
-TZFILE="../usr/share/zoneinfo/${TZ}"
+TZFILE="../usr/share/zoneinfo/${TIMEZONE}"
 
 # Work from the /etc directory
 cd /etc
 
 if [ -f ${TZFILE} ]; then  # Make sure the file exists
-	echo "Setting timezone to ${TZ}"
+	echo "Setting timezone to ${TIMEZONE}"
 	ln -sf ${TZFILE} localtime  # Set the timezone
 else
-	echo "Timezone: ${TZ} not found, skipping"
+	echo "Timezone: ${TIMEZONE} not found, skipping"
 fi
