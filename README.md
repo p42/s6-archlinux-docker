@@ -16,6 +16,7 @@ The [s6-overlay project](https://github.com/just-containers/s6-overlay) is a ser
 | Tag | Description |
 |---|---|
 | latest | The most current build.  Images based on latest may change often an possibly could break.  Test your images |
+| 2.1.0.2 | S6 Overlay v2.1.0.2 built on 2020-12-03 |
 | 1.22.1.0 | S6 Overlay v1.22.1.0 built on 2019-01-14 |
 | 1.22.0.0 | S6 Overlay v1.22.0.0 built on 2019-01-14 |
 | 1.21.8.0 | S6 Overlay v1.21.8.0 built on 2019-01-14 |
